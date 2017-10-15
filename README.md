@@ -1,5 +1,5 @@
 # androidWithReactNative
-created to learn using react-native with existing android app and also adding custom modules
+For learning react-native with existing android app and also adding custom modules
 
 
 ## Getting Started
@@ -12,5 +12,13 @@ Run following commands in cmd
 ### Prerequisites
 
 install react-native and node before trying to run this project on your machine, follow - https://facebook.github.io/react-native/docs/getting-started.html
+
+## Authors
+
+* **Manjeet Singh** - 
+
+### Helpful links
+1. creating native modules for android - https://facebook.github.io/react-native/docs/native-modules-android.html
+2. integrating with existing app - https://facebook.github.io/react-native/docs/integration-with-existing-apps.html
 
 
