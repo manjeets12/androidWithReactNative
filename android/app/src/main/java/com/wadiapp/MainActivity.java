@@ -78,9 +78,11 @@ public class MainActivity extends AppCompatActivity {
                 if(isListView){
                     columns = GRIDVIEW_COLUMN;
                     icon = LIST_ICON;
+                    isListView= false;
                 }else{
                     columns = LISTVIEW_COLUMN;
                     icon = GRID_ICON;
+                    isListView= true;
                 }
                 mFab.setImageDrawable(ContextCompat.getDrawable(mContext,icon));
                 mGridView.setNumColumns(columns);

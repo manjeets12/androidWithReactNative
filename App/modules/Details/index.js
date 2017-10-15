@@ -14,6 +14,7 @@ import CustomModule from 'app/lib/CustomModule';
 import DetailsActions from 'app/reducers/details';
 import {Loader} from 'app/modules/Components';
 import ShortInformation from './ShortInformation';
+import Images from 'app/images';
 
 import styles from './styles';
 
@@ -26,7 +27,6 @@ class Details extends Component<{}> {
 
   componentDidMount(){
     console.log(this.props);
-
     let {navigation}= this.props;
     if(navigation.CITY_NAME){
        this.props.getWeather(navigation.CITY_NAME, 30);
@@ -101,9 +101,20 @@ class Details extends Component<{}> {
   }
 }
 
-Details.navigationOptions = ({ navigation }) => ({
-    title: `Weather of ${navigation.CITY_NAME}`,
-});
+Details.navigationOptions = ({ navigation }) => {
+  const { state, setParams } = navigation;
+  return {
+    headerTitle: `Weather of ${navigation.CITY_NAME}`,
+    // Render a button on the right side of the header.
+    // When pressed switches the screen to edit mode.
+    headerLeft: (
+      <TouchableOpacity
+        onPress ={()=>CustomModule.finish()}>
+        <Image source={Images.back_icon} resizeMode="contain" style={{width:24, height:24, margin:16}}/>
+      </TouchableOpacity>
+    ),
+  };
+};
 
 const mapStateToProps = (state) => ({
   details: state.details,
